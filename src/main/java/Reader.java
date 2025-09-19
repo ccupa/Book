@@ -1,12 +1,14 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class Reader {
-    public static int CARD_NUMBER_;
-    public static int NAME_;
-    public static int PHONE_;
-    public static int BOOK_COUNT_;
-    public static int BOOK_START_;
+    public static final int CARD_NUMBER_ = 0;
+    public static final int NAME_ = 1;
+    public static final int PHONE_ = 2;
+    public static final int BOOK_COUNT_ = 3;
+    public static final int BOOK_START_ = 4;
+
     private int cardNumber;
     private String name;
     private String phone;
@@ -24,6 +26,7 @@ public class Reader {
         this.cardNumber = cardNumber;
         this.name = name;
         this.phone = phone;
+        books = new ArrayList<>();
     }
 
     public Code addBook(Book book) {
@@ -49,8 +52,8 @@ public class Reader {
         return books.contains(book);
     }
 
-    public static int getBookCount() {
-        return BOOK_COUNT_;
+    public int getBookCount() {
+        return books.size();
     }
 
     public List<Book> getBooks() {
@@ -99,6 +102,6 @@ public class Reader {
     }
 
     public String toString() {
-        return name + "(#" + cardNumber + ") has checked out " + "{" + books + "}";
+        return name + " (#" + cardNumber + ") has checked out " + books;
     }
 }

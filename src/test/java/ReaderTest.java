@@ -6,7 +6,6 @@
     Author: Andrea Ultreras
     Date: 02/22/21
  */
-import Utilities.Code;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,9 +14,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.sun.tools.classfile.Attribute.Code;
 import static org.junit.jupiter.api.Assertions.*;
-
 
 class ReaderTest {
     //DECLARE VARIABLES--------------------------------------------------------
