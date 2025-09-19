@@ -36,12 +36,6 @@ class ReaderTest {
 
     Book bookTest;
 
-    public enum Code {
-        SUCCESS,
-        BOOK_ALREADY_CHECKED_OUT_ERROR,
-        READER_DOESNT_HAVE_BOOK_ERROR,
-        READER_COULD_NOT_REMOVE_BOOK_ERROR
-    }
 
     //CONSTRUCTOR & DESTRUCTOR-------------------------------------------------
     @BeforeEach
@@ -155,17 +149,17 @@ class ReaderTest {
     void addBook() {
         //TODO: how to check status code
         Reader reader = new Reader(0, "", "");
-        assertEquals(reader.addBook(bookTest), Code.SUCCESS);
-        assertNotEquals(reader.addBook(bookTest), Code.SUCCESS);    //shows that the same book can't be added twice
-        assertEquals(reader.addBook(bookTest), Code.BOOK_ALREADY_CHECKED_OUT_ERROR);    //shows that the book was already added
+        assertEquals(reader.addBook(bookTest), Reader.Code.SUCCESS);
+        assertNotEquals(reader.addBook(bookTest), Reader.Code.SUCCESS);    //shows that the same book can't be added twice
+        assertEquals(reader.addBook(bookTest), Reader.Code.BOOK_ALREADY_CHECKED_OUT_ERROR);    //shows that the book was already added
     }
 
     @Test
     void removeBook() {
         Reader reader = new Reader(0, "", "");
-        assertEquals(reader.removeBook(bookTest), Code.READER_DOESNT_HAVE_BOOK_ERROR);
+        assertEquals(reader.removeBook(bookTest), Reader.Code.READER_DOESNT_HAVE_BOOK_ERROR);
         reader.addBook(bookTest);
-        assertEquals(reader.removeBook(bookTest), Code.SUCCESS);
+        assertEquals(reader.removeBook(bookTest), Reader.Code.SUCCESS);
     }
 
     @Test
