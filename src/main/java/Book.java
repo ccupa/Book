@@ -24,13 +24,13 @@ public class Book {
     private String subject;
     private String title;
 
-    public Book(String isbn, String title, String subject, String author, LocalDate dueDate, int pageCount) {
+    public Book(String isbn, String title, String subject, int pageCount, String author, LocalDate dueDate) {
         this.isbn = isbn;
         this.title = title;
         this.subject = subject;
+        this.pageCount = pageCount;
         this.author = author;
         this.dueDate = dueDate;
-        this.pageCount = pageCount;
     }
 
     public Book() {
