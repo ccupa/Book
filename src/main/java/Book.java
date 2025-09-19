@@ -33,9 +33,6 @@ public class Book {
         this.dueDate = dueDate;
     }
 
-    public Book() {
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
