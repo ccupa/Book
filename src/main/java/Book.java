@@ -1,3 +1,11 @@
+/**
+ *
+ * Author: Carlos Eduardo Cupa
+ * Assignment Name: Project 01 Part 01/04: Book.java (lite ~45 min)
+ *
+ */
+
+
 import java.time.LocalDate;
 import java.util.Objects;
 
