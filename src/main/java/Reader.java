@@ -1,6 +1,9 @@
+import javax.swing.text.Utilities;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import Utilities.Code;
+
 
 public class Reader {
     public static final int CARD_NUMBER_ = 0;
@@ -15,12 +18,6 @@ public class Reader {
     private List<Book> books;
 
 
-    public enum Code {
-        SUCCESS,
-        BOOK_ALREADY_CHECKED_OUT_ERROR,
-        READER_DOESNT_HAVE_BOOK_ERROR,
-        READER_COULD_NOT_REMOVE_BOOK_ERROR
-    }
 
     public Reader(int cardNumber, String name, String phone) {
         this.cardNumber = cardNumber;
