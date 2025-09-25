@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Objects;
 
 public class Shelf {
     public static final int SHELF_NUMBER_ = 0;
@@ -39,4 +40,23 @@ public class Shelf {
     public void setBooks(HashMap<Book, Integer> books) {
         this.books = books;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Shelf shelf = (Shelf) o;
+        return shelfNumber == shelf.shelfNumber && Objects.equals(subject, shelf.subject);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(shelfNumber, subject);
+    }
+
+    public String toString() {
+        return shelfNumber + ":" + subject;
+    }
+
+
 }
