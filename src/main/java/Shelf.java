@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Objects;
+import java.util.Random;
 
 public class Shelf {
     public static final int SHELF_NUMBER_ = 0;
@@ -58,5 +59,11 @@ public class Shelf {
         return shelfNumber + ":" + subject;
     }
 
-
+    public int getBookCount(Book book){
+        if(books.containsKey(book)) {
+            return books.get(book);
+        } else {
+            return -1;
+        }
+    }
 }
