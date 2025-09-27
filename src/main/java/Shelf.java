@@ -1,3 +1,5 @@
+import Utilities.Code;
+
 import java.util.HashMap;
 import java.util.Objects;
 import java.util.Random;
@@ -64,6 +66,22 @@ public class Shelf {
             return books.get(book);
         } else {
             return -1;
+        }
+    }
+
+    public Code addBOok(Book book) {
+        if (books.containsKey(book)) {
+            int count = books.get(book);
+            books.put(book, count++);
+            System.out.println(book.toString() + " added to shelf " + this.toString());
+            return Code.SUCCESS;
+        }
+        if (book.getSubject().equals(this.subject)) {
+            books.put(book, 1);
+            System.out.println(book.toString() + " added to shelf " + this.toString());
+            return Code.SUCCESS;
+        } else {
+            return Code.SHELF_SUBJECT_MISMATCH_ERROR;
         }
     }
 }

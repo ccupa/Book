@@ -93,9 +93,7 @@ public class Book {
         this.subject = subject;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    public void setTitle(String title) {this.title = title;}
 
     public String toString() {
         return title + " by " + author + " ISBN: " + isbn;
