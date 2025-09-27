@@ -69,7 +69,7 @@ public class Shelf {
         }
     }
 
-    public Code addBOok(Book book) {
+    public Code addBook(Book book) {
         if (books.containsKey(book)) {
             int count = books.get(book);
             books.put(book, count++);
@@ -85,7 +85,7 @@ public class Shelf {
         }
     }
 
-    public Code removeBOok(Book book) {
+    public Code removeBook(Book book) {
         if (!books.containsKey(book)) {
             System.out.println(book.getTitle() + " is not on shelf " + this.subject);
             return Code.BOOK_NOT_IN_INVENTORY_ERROR;
