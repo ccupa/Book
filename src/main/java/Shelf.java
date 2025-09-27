@@ -100,4 +100,22 @@ public class Shelf {
             return Code.BOOK_NOT_IN_INVENTORY_ERROR;
         }
     }
+
+    public String listBooks(){
+        int totalBooks = 0;
+            for (int count : books.values()) {
+                totalBooks += count;
+            }
+            StringBuilder sb = new StringBuilder();
+            sb.append(totalBooks).append(" books on shelf: ").append(shelfNumber).
+                    append(" : ").append(subject).append("\n");
+
+            for (Book book : books.keySet()) {
+                int count = books.get(book);
+                sb.append(book.getTitle()).append(" by ").append(book.getAuthor())
+                        .append(" ISBN:").append(book.getIsbn()).append(" ")
+                        .append(count).append("\n");
+            }
+        return sb.toString();
+    }
 }
